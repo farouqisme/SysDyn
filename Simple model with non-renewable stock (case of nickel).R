@@ -64,10 +64,7 @@ model <- function(time, stocks, auxs) {
     
     aCOGS          <- aTotExtrCost + aTotSmltCost
     aProfit        <- aRevenue - aCOGS
-    
-    #########TERDAPAT MASALAH DALAM PENENTUAN INVESTMENT
-    #########HASILNYA sSmeltingCapacity menjadi minus dan aInvest
-    #########Menjadi 0 sehingga perhitungan tidak terjadi!
+              
     aInvest        <- max(0, sOperatingProfit * aPropForInvest)
     
     #Distributing Investments
@@ -139,3 +136,4 @@ ggplot(model_nickel, aes(x = time)) +
        subtitle = "PDB Tahunan dihitung ulang setiap saat berdasarkan jumlah mesin",
        x = "Tahun", y = "Jumlah Unit") +
   theme_minimal() 
+
